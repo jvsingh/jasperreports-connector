@@ -1,47 +1,32 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+#DevKit & connector's files
+*credentials.properties
+*.credentials.properties
+*creds-s3.properties
+dependency-reduced-pom.xml
 
-# Folder config file
-Desktop.ini
+# Maven
+target/
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Eclipse files
+.studio
+.classpath
+.project
+.settings
+.factorypath
+.bin
+/workspace/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# IntelliJ Idea files
+*.iml
+*.ipr
+*.iws
+/.idea
 
-# Windows shortcuts
-*.lnk
-
-# =========================
-# Operating System Files
-# =========================
-
-# OSX
-# =========================
-
+# Mac
 .DS_Store
-.AppleDouble
-.LSOverride
 
-# Thumbnails
-._*
+# Test remnants
+.mule/
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# License File
+muleLicenseKey.lic
