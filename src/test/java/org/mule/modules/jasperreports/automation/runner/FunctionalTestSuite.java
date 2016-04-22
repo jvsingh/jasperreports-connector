@@ -12,19 +12,17 @@ import org.mule.tools.devkit.ctf.mockup.ConnectorTestContext;
 @RunWith(Suite.class)
 @SuiteClasses({
 
-JasperReportsConnectorTestCases.class
-})
-
+JasperReportsConnectorTestCases.class })
 public class FunctionalTestSuite {
-	
+
 	@BeforeClass
-	public static void initialiseSuite(){
+	public static void initialiseSuite() {
 		ConnectorTestContext.initialize(JasperReportsConnector.class);
 	}
-	
+
 	@AfterClass
-    public static void shutdownSuite() {
-    	ConnectorTestContext.shutDown();
-    }
-	
+	public static void shutdownSuite() {
+		ConnectorTestContext.shutDown();
+	}
+
 }

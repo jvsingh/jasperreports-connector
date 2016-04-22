@@ -3,6 +3,7 @@ package org.mule.modules.jasperreports;
 import org.mule.api.annotations.Config;
 import org.mule.api.annotations.Connector;
 import org.mule.api.annotations.Processor;
+import org.mule.api.annotations.param.Optional;
 import org.mule.modules.jasperreports.config.ConnectorConfig;
 import org.w3c.dom.Document;
 
@@ -11,18 +12,25 @@ public class JasperReportsConnector {
 
     @Config
     ConnectorConfig config;
+    
+    public enum ReportType {
+        HTML, PDF 
+    }
 
     /**
      * Custom processor
      *
-     * @param friend Name to be used to generate a greeting message.
-     * @return A greeting message
+     * @param 
+     * @return 
      */
     @Processor
-    public String generateReport(String reportId, Document xmlContent) {
+    public String generateReport(String reportId, Document reportContent, ReportType reportType, @Optional Boolean retainFile) {
         /*
          * MESSAGE PROCESSOR CODE GOES HERE
          */
+    	System.out.println("XML Content: "+ reportContent);
+    	if(reportContent != null)
+    		System.out.println("reportContent: "+ reportContent.getFirstChild().getTextContent());
         return config.getReportIdentifier() + " " + reportId + ". " + config.getXmlData();
     }
 
