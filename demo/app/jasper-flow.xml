@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:jasperreports="http://www.mulesoft.org/schema/mule/jasperreports" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:jasperreports="http://www.mulesoft.org/schema/mule/jasperreports" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:spring="http://www.springframework.org/schema/beans" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/jasperreports http://www.mulesoft.org/schema/mule/jasperreports/current/mule-jasperreports.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
     <jasperreports:config name="JasperReports__Configuration" jasperPath="/tmp" reportIdentifier="testReport" outputDirectory="/tmp" xmlData="&lt;test&gt;test&lt;/test&gt;" doc:name="JasperReports: Configuration"/>
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" basePath="/jasper" doc:name="HTTP Listener Configuration"/>
     <flow name="jasper-flowFlow">
@@ -31,6 +32,7 @@ http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee
 	}
 }]]></dw:set-variable>
         </dw:transform-message>
-        <jasperreports:generate-report config-ref="JasperReports__Configuration" reportId="testReport"  doc:name="JasperReports" reportContent-ref="#[flowVars['reportContent']]" reportType="PDF" retainFile="true"/>
+        <jasperreports:generate-report config-ref="JasperReports__Configuration" reportId="Address" reportContent-ref="#[flowVars['reportContent']]" reportType="HTML" retainFile="true" doc:name="JasperReports"/>
     </flow>
+
 </mule>
