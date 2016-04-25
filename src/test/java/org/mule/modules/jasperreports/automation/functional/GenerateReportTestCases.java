@@ -29,8 +29,11 @@ public class GenerateReportTestCases extends
 		java.lang.String expected = null;
 		java.lang.String reportId = null;
 		org.w3c.dom.Document reportContent = null;
-		assertEquals(getConnector().generateReport(reportId, reportContent, JasperReportsConnector.ReportType.PDF, true),
-				expected);
+		org.mule.modules.jasperreports.JasperReportsConnector.ReportType reportType = null;
+		java.lang.Boolean retainFile = null;
+		assertEquals(
+				getConnector().generateReport(reportId, reportContent,
+						reportType, retainFile), expected);
 	}
 
 }

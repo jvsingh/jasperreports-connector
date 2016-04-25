@@ -5,14 +5,12 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
-import org.mule.modules.jasperreports.automation.functional.JasperReportsConnectorTestCases;
+import org.mule.modules.jasperreports.automation.functional.GenerateReportTestCases;
 import org.mule.modules.jasperreports.JasperReportsConnector;
 import org.mule.tools.devkit.ctf.mockup.ConnectorTestContext;
 
 @RunWith(Suite.class)
-@SuiteClasses({
-
-JasperReportsConnectorTestCases.class })
+@SuiteClasses({ GenerateReportTestCases.class })
 public class FunctionalTestSuite {
 
 	@BeforeClass
