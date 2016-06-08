@@ -1,34 +1,24 @@
-# JasperReports Anypoint Connector
 
-[Connector description including destination service or application with]
+Mule JasperReports Connector
+============================
 
-# Mule supported versions
-Examples:
-Mule 3.4.x, 3.5.x
-Mule 3.4.1
-
-# [Destination service or application name] supported versions
-Example:
-Oracle E-Business Suite 12.1 and above.
-
-#Service or application supported modules
-Example:
-Oracle CRM
-Oracle Financials
-or 
-Salesforce API v.24
-Salesforce Metadata API
+JasperReports is an open source reporting tool that can generate outputs in a variety of formats (Word, PDF, HTML, Excel). 
+http://community.jaspersoft.com/project/jasperreports-library
 
 
-# Installation 
-For beta connectors you can download the source code and build it with devkit to find it available on your local repository. Then you can add it to Studio
+Installation and Usage
+----------------------
 
-For released connectors you can download them from the update site in Anypoint Studio. 
-Open Anypoint Studio, go to Help → Install New Software and select Anypoint Connectors Update Site where you’ll find all avaliable connectors.
+This connector is not yet available from the anypoint exchange. To install purely for the purpose of trying it out, checkout the project from github, build and install. 
 
-#Usage
-For information about usage our documentation at http://github.com/jvsingh/jasperreports.
+Reporting Issues
+----------------
 
-# Reporting Issues
+We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link https://github.com/jvsingh/jasperreports-connector/issues
 
-We use GitHub:Issues for tracking issues with this connector. You can report new issues at this link http://github.com/jvsingh/jasperreports/issues.
+Contribute to JasperReports Connector
+----------------------------------
+
+This connector might need some more work before it can be made available for wider consumption
+Go to http://mulesoft.github.io/connector-certification-docs/contr/index.html
+ and see how you can contribute.
