@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Address>
+   <ContactName>Test contact name</ContactName>
+	<AddressLine1>Line 1</AddressLine1>
+	<AddressLine2>Test Address Line 2</AddressLine2>
+	<City>Test City</City>
+</Address>

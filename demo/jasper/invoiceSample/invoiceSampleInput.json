@@ -1,0 +1,47 @@
+ {
+    "invoice": 
+    {
+      "vendor": {
+        "companyName" : "Singhpora Consulting",
+        "email": "info@singhpora.com",
+        "addressLine1": "272 Bath Street",
+        "addressLine2": "Singhpora IT Consulting Ltd",
+        "addressLine3": "Glasgow",
+        "addressLine4": "G2 4JR",
+        "vatOrTaxID": "GBXXXXXXXX",
+        "logo": "https://github.com/SinghporaConsulting/CloudToolchain/blob/develop/logo2.png"
+      },
+      "customer": {
+        "companyName" : "Test Customer",
+        "email": "test@.....com",
+        "addressLine1": "Customer Address Line 1",
+        "addressLine2": "Customer Address Line 2",
+        "addressLine3": "Customer Postcode",
+        "taxInfo": "GBXXXXXXXX"
+      },
+      "lineItems":[
+        {
+          "description": "Invoice for XYZ development",
+          "quantity": 20,
+          "unit-price": 700,
+          "total": 14000
+        },
+        {
+          "description": "Invoice for XYZ development",
+          "qty": 10,
+          "unit-price": 700,
+          "total": 7000
+        }
+      ],
+      "invoiceTotal": "21000",
+      "discount":"1000",
+      "grossAmount": "20000",
+      "VAT":"4000",
+      "netAmount":"24000",
+      "invoiceCurrency": "XYZ",
+      "invoiceNumber": "1st January 2017",
+      "invoiceDate": "1st January 2017",
+      "paymentTerms": "Due in 10 business days.",
+      "specialTerms": "1% cash back on immediate payment."
+    }
+ }

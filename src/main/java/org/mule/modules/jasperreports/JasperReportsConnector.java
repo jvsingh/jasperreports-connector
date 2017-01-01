@@ -1,15 +1,9 @@
 package org.mule.modules.jasperreports;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -21,12 +15,8 @@ import org.mule.api.annotations.Config;
 import org.mule.api.annotations.Connector;
 import org.mule.api.annotations.Processor;
 import org.mule.api.annotations.param.Optional;
-import org.mule.api.transport.ConnectorException;
 import org.mule.modules.jasperreports.config.ConnectorConfig;
-import org.mule.transport.AbstractConnector;
-import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
 import com.lowagie.text.pdf.codec.Base64;
 
@@ -49,7 +39,7 @@ public class JasperReportsConnector {
 	@Processor
 	public String generateReport(String reportId, Document reportContent,
 			ReportType reportType, @Optional Boolean retainFile) {
-		
+
 		try {
 			String trackingInfo = "000";
 			String reportRootElement = reportId;
@@ -59,12 +49,13 @@ public class JasperReportsConnector {
 						+ reportContent.getFirstChild().getTextContent());
 
 			String tempFileName = config.getOutputDirectory() + "/"
-					+ trackingInfo + System.currentTimeMillis() + ("."+reportType).toLowerCase();
+					+ trackingInfo + System.currentTimeMillis()
+					+ ("." + reportType).toLowerCase();
 
 			String reportDefinition = config.getJasperPath() + "/" + reportId
 					+ ".jasper";
 
-			Map parameters = new HashMap();
+			Map<String, Object> parameters = new HashMap<String, Object>();
 
 			JasperReport jasperReport = (JasperReport) JRLoader
 					.loadObject(new File(reportDefinition));
@@ -74,6 +65,7 @@ public class JasperReportsConnector {
 
 			JasperPrint jasperPrint = JasperFillManager.fillReport(
 					jasperReport, parameters, xmlDS);
+			
 
 			if (ReportType.HTML == reportType)
 				JasperExportManager.exportReportToHtmlFile(jasperPrint,
@@ -100,4 +92,18 @@ public class JasperReportsConnector {
 		this.config = config;
 	}
 
+	public static void main(String[] args) {
+
+		try {
+			JasperReportsConnector connector = new JasperReportsConnector();
+			Document reportContent = null;
+			connector.generateReport("invoice", reportContent, ReportType.PDF,
+					true);
+
+		}
+
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

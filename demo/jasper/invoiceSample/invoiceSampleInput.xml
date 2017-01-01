@@ -1,0 +1,44 @@
+<invoice>
+	<vendor>
+		<companyName>Singhpora Consulting</companyName>
+		<email>info@singhpora.com</email>
+		<addressLine1>272 Bath Street</addressLine1>
+		<addressLine2>Singhpora IT Consulting Ltd</addressLine2>
+		<addressLine3>Glasgow</addressLine3>
+		<addressLine4>G2 4JR</addressLine4>
+		<vatOrTaxID>GBXXXXXXXX</vatOrTaxID>
+		<logo>https://github.com/SinghporaConsulting/CloudToolchain/blob/develop/logo2.png</logo>
+	</vendor>
+	<customer>
+		<companyName>Test Customer</companyName>
+		<email>test@.....com</email>
+		<addressLine1>Customer Address Line 1</addressLine1>
+		<addressLine2>Customer Address Line 2</addressLine2>
+		<addressLine3>Customer Postcode</addressLine3>
+		<taxInfo>GBXXXXXXXX</taxInfo>
+	</customer>
+	<lineItems>
+	    <item>
+      		<description>Invoice for XYZ development</description>
+      		<quantity>20</quantity>
+      		<unit-price>700</unit-price>
+      		<total>14000</total>
+      	</item>
+       	<item>
+       		<description>Invoice for XYZ development</description>
+       		<qty>10</qty>
+       		<unit-price>700</unit-price>
+       		<total>7000</total>
+       	</item>
+	</invoiceItems>
+	<invoiceTotal>21000</invoiceTotal>
+	<discount>1000</discount>
+	<grossAmount>20000</grossAmount>
+	<VAT>4000</VAT>
+	<netAmount>24000</netAmount>
+	<invoiceCurrency>XYZ</invoiceCurrency>
+	<invoiceNumber>1st January 2017</invoiceNumber>
+	<invoiceDate>1st January 2017</invoiceDate>
+	<paymentTerms>Due in 10 business days.</paymentTerms>
+	<specialTerms>1% cash back on immediate payment.</specialTerms>
+</invoice>
